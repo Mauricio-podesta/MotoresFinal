@@ -4,15 +4,36 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private GameObject Victorypanel;
+    [SerializeField] private GameObject LosePanel;
+
+    private void Start()
     {
-        
+        Cursor.lockState = CursorLockMode.None;
+        int gameResult = PlayerPrefs.GetInt("GameResult", -1);
+
+        if (gameResult == 0)
+        {
+            ShowLose();
+        }
+        else if (gameResult == 1)
+        {
+            ShowVictory();
+        }
+    }
+    public void ShowLose()
+    {
+       
+        LosePanel.SetActive(true);
+        Victorypanel.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
+
+    public void ShowVictory()
     {
-        
+       
+        Victorypanel.SetActive(true);
+        LosePanel.SetActive(false);
     }
+
 }

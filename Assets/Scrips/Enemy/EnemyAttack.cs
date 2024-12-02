@@ -6,15 +6,14 @@ using UnityEngine.UI;
 
 public class EnemyAtacck : MonoBehaviour
 {
-    [Serializedfield] private GameManager gameManager;
+
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
             SceneManager.LoadScene("VictoryLose");
-            gameManager.ShowLose();
+            PlayerPrefs.SetInt("GameResult", 0);
         }
     }
-
 }

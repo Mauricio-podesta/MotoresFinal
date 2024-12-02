@@ -733,6 +733,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 823b15a69eb8dd54daa1c3ab919b8d5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 2084748276}
 --- !u!1 &1318594568
 GameObject:
   m_ObjectHideFlags: 0
@@ -1846,6 +1847,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bc4d79a4d3a0a84e9b7e65244ea31f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Victorypanel: {fileID: 0}
+  LosePanel: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
