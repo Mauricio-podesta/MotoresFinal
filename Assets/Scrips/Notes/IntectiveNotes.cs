@@ -13,6 +13,7 @@ public class IntectiveNotes : MonoBehaviour
             
             if (gameManager != null)
             {
+               
                 gameManager.GetComponent<CountNotes>().sumar(notes);
             }
            
