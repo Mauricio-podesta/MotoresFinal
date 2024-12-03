@@ -4,13 +4,14 @@ using UnityEngine;
 using UnityEngine.AI;
 public class EnemyMovement : MonoBehaviour
 {
-    [SerializeField] private Transform target; // Asigna el objetivo desde el inspector
+    [SerializeField] private Transform target;
+  
 
     private NavMeshAgent agent;
 
     void Start()
     {
-        // Obtiene el componente NavMeshAgent
+      
         agent = GetComponent<NavMeshAgent>();
     }
 
@@ -20,6 +21,7 @@ public class EnemyMovement : MonoBehaviour
         if (target != null)
         {
             agent.SetDestination(target.position);
+           
         }
     }
 }
