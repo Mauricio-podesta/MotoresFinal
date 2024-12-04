@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class PassScene : MonoBehaviour
 {
-    [SerializeField] private GameObject objectToActivate; 
+    [SerializeField] private GameObject objectToActivate;
+    [SerializeField] private GameObject objectToDeactivate;
     [SerializeField] private int notesToActivate = 9; 
     private CountNotes countNotes; 
 
@@ -33,6 +34,11 @@ public class PassScene : MonoBehaviour
             if (objectToActivate != null)
             {
                 objectToActivate.SetActive(true);
+                
+            }
+            if (objectToDeactivate != null)
+            { 
+                objectToDeactivate.SetActive(false); 
             }
         }
     }
