@@ -7,7 +7,7 @@ public class Spawner : MonoBehaviour
     [SerializeField] private GameObject objectToSpawn; // Prefab del objeto a spawnear
     [SerializeField] private int spawnCount = 10; // Cantidad de objetos a generar
     [SerializeField] private GameObject terrain; // Terreno donde se generarán los objetos
-
+    [SerializeField] private float heightOffset = 0.5f;
     void Start()
     {
         SpawnObjects();
@@ -20,8 +20,10 @@ public class Spawner : MonoBehaviour
             // Generar posición aleatoria en el terreno
             Vector3 spawnPosition = GetRandomPositionOnTerrain();
 
+            spawnPosition.y += heightOffset;
+
             // Instanciar el objeto
-            Instantiate(objectToSpawn, spawnPosition, Quaternion.identity);
+            Instantiate(objectToSpawn, spawnPosition, Quaternion.Euler(90, 0 , 0));
         }
     }
 
@@ -78,5 +80,5 @@ Vector3 GetRandomPositionOnTerrain()
     // Obtener la altura Y del terreno en la posición (X, Z)
     float yPosition = terrain.SampleHeight(new Vector3(randomX, 0, randomZ)) + terrain.transform.position.y;
 
-    return new Vector3(randomX + terrain.transform.position.x, yPosition, randomZ + terrain.transform.position.z);*/
-}
+    return new Vector3(randomX + terrain.transform.position.x, yPosition, randomZ + terrain.transform.position.z);
+}*/

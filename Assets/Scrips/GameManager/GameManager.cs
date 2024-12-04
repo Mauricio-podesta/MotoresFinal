@@ -27,8 +27,6 @@ public class GameManager : MonoBehaviour
         LosePanel.SetActive(true);
         Victorypanel.SetActive(false);
     }
-
-
     public void ShowVictory()
     {
        
